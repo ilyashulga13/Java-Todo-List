@@ -11,5 +11,12 @@ public class Task {
 
     public int getId() { return id; }
     public String getTitle() { return title; }
+    public boolean isCompleted() { return isCompleted; }
+    public void MarkCompleted() { this.isCompleted = true; }
     
+    @Override
+    public String ToString() {
+        String status = isCompleted ? "[✔] Done" : "[ ] Pending";
+        return id + ". " + title + " " + status;
+    }
 }
